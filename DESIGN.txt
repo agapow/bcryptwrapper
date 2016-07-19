@@ -1,0 +1,14 @@
+Design & development notes
+==========================
+
+*Odd thoughts and ruminations, mostly justifying why things are the way they are.*
+
+* bcrypt recognises encrypted files by the extension '.bfe'. There is no way to "force" decryption of a file without this extension.
+
+* This extension is case-sensitive. '.BFE' won't work.
+
+* When a file is decrypted, the name of the output is just the input with the '.bfe' extension stripped off. That is, if you encrypt 'a.txt', you'll get 'a.txt.bfe'. If you rename this to 'b.txt.bfe' and decrypt it, you'll end up with 'b.txt'. Put another way, encryption does not preserve the input filename.
+
+* If you use bcrypt's send to stdout ability, the input file cannot be deleted. Which seems logical - when you're sending to stdout, there's no implicit guarantee that the result has been captured.
+
+* I guess that an equivalent (and more powerful) module could be written that calls the bcrypt *library* but then I'd have to write a whole lot of CPython wrapper code, it would take muchos time, etc.

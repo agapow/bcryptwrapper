@@ -3,16 +3,6 @@ A programmatic wrapper for the bcrypt commandline utility.
 
 Replicates the full bcrypt commandline behaviour.
 
-Along the way, I've discovered a few interesting behaviours:
-
-* bcrypt recognises encrypted files by the extension '.bfe'
-
-* This extension is case-sensitive. '.BFE' won't work.
-
-* When a file is decrypted, the name of the output is just the input with the '.bfe' extension stripped off. That is, if you encrypt 'a.txt', you'll get 'a.txt.bfe'. If you rename this to 'b.txt.bfe' and decrypt it, you'll end up with 'b.txt'. Put another way, the encryption does not preserve the input filename.
-
-* If you use bcrypts send to stdout ability
-
 """
 
 __version__ = '0.1'

@@ -9,10 +9,10 @@ Background
 This was prompted by the facts that:
 
 * despite there being several bcrypt libraries for Python, all of them are for
-   password generation and validation, none for encryption
+  password generation and validation, none for encryption
 
 * the bcrypt commandline needs the password to be interactively entered (i.e.
-   typed in) and cannot be passed on the commandline
+  typed in) and cannot be passed on the commandline
 
 I wanted to write some scripts would periodically encrypt and email files, so
 obviously there was a gap. Thus I wrote this package to allow bcrypt to be
